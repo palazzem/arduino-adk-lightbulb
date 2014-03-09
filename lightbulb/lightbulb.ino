@@ -23,6 +23,7 @@ void setup()
   pinMode(LED, OUTPUT);
   Serial.begin(115200);
   delay(1000);
+  Serial.println("Ready for commands...");
 }
 
 void loop()
