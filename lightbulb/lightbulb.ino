@@ -21,6 +21,8 @@ uint32_t bytesRead = 0;
 void setup()
 {
   pinMode(LED, OUTPUT);
+  digitalWrite(LED, LOW);
+  delay(1000);
   Serial.begin(115200);
   delay(1000);
   Serial.println("Ready for commands...");
@@ -46,7 +48,7 @@ void readingFromADK()
 
 uint8_t parseResponse()
 {
-  return buffer[0];
+  return buffer[0] - 48;
 }
 
 void commandInterpreter(uint8_t command)
